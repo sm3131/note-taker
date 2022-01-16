@@ -2,6 +2,8 @@ const express = require('express');
 const notes = require('./db/db.json');
 console.log(notes);
 const uniqid = require('uniqid');
+const fs = require('fs');
+const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -45,6 +47,11 @@ function createNewNote(body, notesArray) {
     // our function's main code will go here!
     const note = body;
     notesArray.push(note);
+
+    fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify(notesArray, null, 2)
+      );
 
     // return finished code to post route for response
     return note;
