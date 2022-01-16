@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get('/api/notes', (req, res) => {
     res.json(notes);
@@ -19,6 +21,25 @@ app.get('/notes', (req, res) => {
     const fileName = __dirname + '/public/notes.html'
     res.sendFile(fileName);
 });
+
+app.get('*', (req, res) => {
+    const fileName = __dirname + '/public/index.html'
+    res.sendFile(fileName);
+});
+
+app.post('/api/notes', (req, res) => {
+    // req.body is where our incoming content will be
+    console.log(req.body);
+    res.json(req.body);
+});
+
+function createNewNote(body, notesArray) {
+    console.log(body);
+    // our function's main code will go here!
+
+    // return finished code to post route for response
+    return body;
+}
 
 app.listen(PORT, () => {
     console.log(`API server now on port 3001!`);
