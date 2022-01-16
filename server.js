@@ -1,5 +1,7 @@
 const express = require('express');
 const notes = require('./db/db.json');
+console.log(notes);
+const uniqid = require('uniqid');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -29,16 +31,23 @@ app.get('*', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     // req.body is where our incoming content will be
+    req.body.id = uniqid();
     console.log(req.body);
-    res.json(req.body);
+    console.log(req.body.id);
+
+    const note = createNewNote(req.body, notes);
+
+    res.json(note);
 });
 
 function createNewNote(body, notesArray) {
     console.log(body);
     // our function's main code will go here!
+    const note = body;
+    notesArray.push(note);
 
     // return finished code to post route for response
-    return body;
+    return note;
 }
 
 app.listen(PORT, () => {
