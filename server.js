@@ -1,20 +1,25 @@
 const express = require('express');
 const notes = require('./db/db.json');
 console.log(notes);
-const uniqid = require('uniqid');
-const fs = require('fs');
-const path = require('path');
+// const uniqid = require('uniqid');
+// const fs = require('fs');
+// const path = require('path');
+//const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'));
 
-app.get('/api/notes', (req, res) => {
-    res.json(notes);
-});
+app.use('/api', apiRoutes);
+//app.use('*', htmlRoutes);
+
+// app.get('/api/notes', (req, res) => {
+//     res.json(notes);
+// });
 
 app.get('/', (req, res) => {
     const fileName = __dirname + '/public/index.html'
@@ -31,54 +36,54 @@ app.get('*', (req, res) => {
     res.sendFile(fileName);
 });
 
-app.post('/api/notes', (req, res) => {
-    // req.body is where our incoming content will be
-    req.body.id = uniqid();
-    console.log(req.body);
-    console.log(req.body.id);
+// app.post('/api/notes', (req, res) => {
+//     // req.body is where our incoming content will be
+//     req.body.id = uniqid();
+//     console.log(req.body);
+//     console.log(req.body.id);
 
-    const note = createNewNote(req.body, notes);
+//     const note = createNewNote(req.body, notes);
 
-    res.json(note);
-});
+//     res.json(note);
+// });
 
-function createNewNote(body, notesArray) {
-    console.log(body);
-    // our function's main code will go here!
-    const note = body;
-    notesArray.push(note);
+// function createNewNote(body, notesArray) {
+//     console.log(body);
+//     // our function's main code will go here!
+//     const note = body;
+//     notesArray.push(note);
 
-    fs.writeFileSync(
-        path.join(__dirname, './db/db.json'),
-        JSON.stringify(notesArray, null, 2)
-      );
+//     fs.writeFileSync(
+//         path.join(__dirname, './db/db.json'),
+//         JSON.stringify(notesArray, null, 2)
+//       );
 
-    // return finished code to post route for response
-    return note;
-}
+//     // return finished code to post route for response
+//     return note;
+// }
 
-app.delete('/api/notes/:id', (req, res) => {
-    console.log(req.params.id);
-    const result = deleteNote(req.params.id, notes)
+// app.delete('/api/notes/:id', (req, res) => {
+//     console.log(req.params.id);
+//     const result = deleteNote(req.params.id, notes)
 
-    res.json(result);
-})
+//     res.json(result);
+// })
 
-function deleteNote(id, notesArray) {
+// function deleteNote(id, notesArray) {
 
-    const filterArr = notesArray.filter(note => note.id === id);
+//     const filterArr = notesArray.filter(note => note.id === id);
 
-    const i = notesArray.indexOf(filterArr[0]);
+//     const i = notesArray.indexOf(filterArr[0]);
     
-    notesArray.splice(i, 1);
+//     notesArray.splice(i, 1);
 
-    fs.writeFileSync(
-        path.join(__dirname, './db/db.json'),
-        JSON.stringify(notesArray, null, 2)
-      );
+//     fs.writeFileSync(
+//         path.join(__dirname, './db/db.json'),
+//         JSON.stringify(notesArray, null, 2)
+//       );
 
-      return notesArray;
-}
+//       return notesArray;
+// }
 
 app.listen(PORT, () => {
     console.log(`API server now on port 3001!`);

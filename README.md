@@ -24,6 +24,7 @@ The Note Taker application was built with:
 - Inquirer
 - HTML
 - CSS
+- Express.js
 
 ## Code Access
 
@@ -34,7 +35,7 @@ Example Note Taker application functionality:
 ![team-profile](./utils/images/)
 
 ## Installation
-To install the Team Profile Generator application complete the following steps:
+To install the Note Taker application complete the following steps:
 1. Clone the application's code from this [GitHub](https://github.com/sm3131/team-profile-generator) repository onto your local machine into a new directory (e.g. team-profile-generator).
 2. Open the command line and navigate to the directory you cloned this repository into, then open the content in a code text editor. You should now see the main files and folders for this project (index.js, generateHTML.js, /lib, /dist, __tests__).
 3. Next check to see if you have node.js installed on your machine by running the command *node -v* in your command line.
@@ -44,7 +45,7 @@ To install the Team Profile Generator application complete the following steps:
 7. After you have node.js and the required npm dependencies installed, you are ready to run the application via node.js using the command line.
 
 ## Usage
-To use the team profile generator application complete the following steps:
+To use the Note Taker application complete the following steps:
 1. The purpose of this application is to generate a team profile webpage based on user input, so if you need of a nicely formatted team roster for your company this is the application for you. 
 2. After you have completed all of the above installation steps, you can now either test the application to see how it works and what the prompts ask, or you can jump right into creating your team profile.
 3. To begin running the application in the command line, type *node index.js* and this will start the program.
