@@ -8,7 +8,7 @@ router.get('/notes', (req, res) => {
     res.json(notes);
 });
 
-router.post('/note', (req, res) => {
+router.post('/notes', (req, res) => {
     req.body.id = uniqid();
     const note = createNewNote(req.body, notes);
 
@@ -26,7 +26,7 @@ function createNewNote(body, notesArray) {
     return note;
 };
 
-router.delete('/note/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
     const result = deleteNote(req.params.id, notes)
 
     res.json(result);
