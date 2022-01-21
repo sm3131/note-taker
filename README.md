@@ -84,6 +84,9 @@ SOFTWARE.
 
 ## Note Taker Link
 
+Click on the heroku link below to use the Note Taker application:
+https://note-taker-3131.herokuapp.com/
+
 ## Questions
 
 If you would like to access this project's repository as well as other projects in my GitHub, click this [GitHub](https://github.com/sm3131) link. 
