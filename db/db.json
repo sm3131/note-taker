@@ -1,12 +1,17 @@
 [
   {
-    "title": "New Note",
-    "text": "New",
-    "id": "sktwi1iuykyi0z4uw"
+    "title": "Note 1",
+    "text": "Text for note 1",
+    "id": "sktwi1yiskynod2ct"
   },
   {
-    "title": "Create",
-    "text": "new note",
-    "id": "sktwi1trpkyldqntf"
+    "title": "Note 2",
+    "text": "text for note 2",
+    "id": "sktwi1yn7kynoghji"
+  },
+  {
+    "title": "Note 3",
+    "text": "text for note 3",
+    "id": "sktwi1yn7kynogqa3"
   }
 ]
