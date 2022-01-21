@@ -45,18 +45,18 @@ If you would like to locally serve the Note Taker application instead of viewing
 5. If you do not have node.js installed follow the installation steps on this website (https://nodejs.org/en/).
 6. Once you have node.js installed, make sure you are still in the note-taker directory in the command line, and then run the following command *npm install* to install the required packages and dependencies to run the application.
 7. After you have node.js and the required npm dependencies installed, you are ready to run the application via node.js using the command line.
-8. Start by entering the command npm start to get the express server started (You should receive a message in your command line that states "API server now on port 3001!")
-9. Once your server is running open up a browser and search the following URL: "http://localhost:3001/"
+8. Start by entering the command *npm start* to get the express server started (You should receive a message in your command line that states "API server now on port 3001!")
+9. Once your server is running, open up a browser and search the following URL: "http://localhost:3001/"
 10. This should bring you to the application's landing page, and then you can follow the usage instruction below to navigate around the app
 
 ## Usage
 To use the Note Taker application follow the steps below:
-1. Upon opening the note taker application in your browser, you will be confronted with the applications landing page, which has the apps name, a brief description, and a "Get Started" button.
-2. Clicking on the "Get Started" button will take you to the note taking page, where you will see a header bar with a "+" sign on the far right, and then below this bar there are two main columns the one on the left will store all of your saved notes and the one on the right will be where you either display saved notes or write a new note.
-3. In order to write a new note you can click on the "+" sign and then click on the "Note Title" to start typing your note title then either hit tab or click on the "Note Text" section to type the content of you note 
-4. Once you are finished typing your new note you should now see a save button to the left of the "+" sign button, and clicking this will save your new note into the application's database as well as into the left hand column with your other saved notes
-5. If you would like to display your saved notes into the main right hand column of the page, then simply click on the saved note's text and it will populate into the area where you write new notes. 
-6. If you would like to delete a saved note, simply click on the trash can icon found to the right of your saved notes, and this will permanently delete your note from the database, and from your list of saved notes in the browser.
+1. Upon opening the note taker application in your browser, you will be confronted with the application's landing page, which has the app's name, a brief description, and a "Get Started" button.
+2. Clicking on the "Get Started" button will take you to the note taking page, where you will see a header bar with a "+" sign on the far right, and then below this bar there are two main columns, the one on the left will store all of your saved notes and the one on the right will be where you either display saved notes or write a new note.
+3. In order to write a new note you can click on the "+" sign and then click on the "Note Title" to start typing your note title then either hit tab or click on the "Note Text" section to type the content of your note 
+4. Once you are finished typing your new note you should now see a save button to the left of the "+" sign button, and clicking this button will save your new note into the application's database as well as into the left hand column with your other saved notes
+5. If you would like to display your saved notes in the right hand column of the page, then simply click on the saved note's text and it will populate into the area where you write new notes. 
+6. If you would like to delete a saved note, simply click on the trash can icon found to the right of each of your saved notes, and this will permanently delete your note from the database, and from your list of saved notes in the browser.
 
 ## License
 
@@ -84,7 +84,7 @@ SOFTWARE.
 
 ## Note Taker Link
 
-Click on the heroku link below to use the Note Taker application:
+Click on the Heroku link below to use the Note Taker application:
 https://note-taker-3131.herokuapp.com/
 
 ## Questions
